@@ -1,14 +1,10 @@
-import { GithubHandler } from '../handlers';
+/// <reference types="chrome"/>
+/**
+ * This script is no longer needed with the direct token approach,
+ * but we'll keep a minimal version for compatibility.
+ */
 
-const github = new GithubHandler();
+console.log("LeetSync: Using direct GitHub token authentication");
 
-try {
-  const url = new URL(window.location.href);
-  const code = url.searchParams.get('code');
-  const referrer = url.searchParams.get('referrer');
-  if (code && referrer === 'leetsync') {
-    github.authorize(code);
-  }
-} catch (e) {
-  console.error(e);
-}
+// Add an empty export to make this file a module
+export {};
